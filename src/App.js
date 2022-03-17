@@ -1,7 +1,7 @@
-// import Home from "./Components/Home";
+import Home from "./Components/Home";
 // import ProductPage from "./Components/ProductPage";
 
-import Cart from "./Components/Cart";
+// import Cart from "./Components/Cart";
 
 // import Login from "./Components/Login";
 // import Register from "./Components/Register";
@@ -10,11 +10,11 @@ import Cart from "./Components/Cart";
 function App() {
   return (
     <div className="App">
-      {/* <Home/> */}
+      <Home/>
       {/* <ProductPage/> */}
       {/* <Login/> */}
       {/* <Register/> */}
-      <Cart/>
+      {/* <Cart/> */}
     </div>
   );
 }
