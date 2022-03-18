@@ -70,7 +70,7 @@ function Register() {
                 <Aggreement>By creating an account i consent to the proccessing of my prersonal data in accordance with the <b>privacy policy</b></Aggreement>
                 <Button>CREATE</Button>
             </Wrapper>
-        </Container>
+        </Container> */}
     </>
   )
 }

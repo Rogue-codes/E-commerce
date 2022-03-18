@@ -1,20 +1,26 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faSign, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faShoppingCart, faSign, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Components = styled.div`
-padding:2%; 
-width:100%;
-height:15vh;
-border-bottom: 1px solid #000;
-display:flex;
-justify-content: flex-start;
-align-items:center;
+    padding:2%; 
+    width:100%;
+    height:15vh;
+    background: #000;
+    border-bottom: 1px solid #000;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    z-index: 80;
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
 `
 
 const Left = styled.div`
-width:50%;
+width:30%;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -22,14 +28,18 @@ gap:5%;
 `
 
 const Center = styled.div`
-font-weight:900;
-text-shadow:2px 2px 4px red;
-color:black;
+    a{
+        font-size: 2vw;
+        text-decoration: none;
+        color: white;
+    }
+
 `
 
 const Right = styled.div`
 display:flex;
 justify-content:flex-end;
+margin-left: 25%;
 width:40%;
 align-items:center;
 .log{
@@ -39,6 +49,19 @@ align-items:center;
     width:25%;
     align-items:center;
     height:8vh;
+    transition: all .5s linear;
+    &:hover{
+        border-bottom: 1px solid #fff;
+    }
+    .ico{
+        font-size: 1vw;
+        color: white;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 1.2vw;
+    }
 }
 .sign{
     display:flex;
@@ -47,8 +70,43 @@ align-items:center;
     gap:10%;
     width:35%;
     height:8vh;
-    border-left:solid 2px grey;
+    transition: all .5s linear;
+    &:hover{
+        border-bottom: 1px solid #fff;
+    }
+    .ico{
+        font-size: 1vw;
+        color: white;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 1.2vw;
+    }
 }
+
+.cart{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10%;
+    width:35%;
+    height:8vh;
+    transition: all .5s linear;
+    &:hover{
+        border-bottom: 1px solid #fff;
+    }
+    .ico{
+        font-size: 1vw;
+        color: white;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 1.2vw;
+    }
+}
+
 `
 
 const Lang = styled.p`
@@ -64,8 +122,12 @@ input{
     height:7vh;
     width:100%;
     border:solid 1px lightgrey;
+    padding-left: 4%;
     border-top-left-radius:12px;
     border-bottom-left-radius:12px;
+    &:focus{
+        outline: none;
+    }
 }
 `
 
@@ -84,6 +146,10 @@ button{
 function Nav() {
   return (
     <Components>
+        <Center>
+            <Link to='/'>ShopLite</Link>
+        </Center>
+
         <Left>
             <Lang>
                 EN
@@ -100,17 +166,20 @@ function Nav() {
 
         </Left>
 
-        <Center><h1>DYNATRACE</h1></Center>
-
         <Right>
             <div className="log">
-            <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
-            <p>Log In</p>
+            <FontAwesomeIcon className='ico' icon={faUser}></FontAwesomeIcon>
+            <Link to='/login'>Log in</Link>
             </div>
 
             <div className="sign">
-            <FontAwesomeIcon icon={faSign}></FontAwesomeIcon>
-            <p>Sign Up</p>
+            <FontAwesomeIcon className='ico'  icon={faSign}></FontAwesomeIcon>
+            <Link to='/register'>Sign Up</Link>
+            </div>
+
+            <div className="cart">
+            <FontAwesomeIcon className='ico'  icon={faShoppingCart}></FontAwesomeIcon>
+            <Link to='/cart'>Cart</Link>
             </div>
         </Right>
     </Components>

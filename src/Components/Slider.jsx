@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import {slideItems} from './Data'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     width: 100%;
@@ -88,6 +89,18 @@ const Btn = styled.button`
     font-size: 1.5vw;
     background: transparent;
     cursor: pointer;
+    transition: all .5s linear;
+    &:hover{
+        background: #000;
+        a{
+            color: white;
+        }
+    }
+    a{
+        font-size: 1.5vw;
+        text-decoration: none;
+        color: #000;
+    }
 `
 
 function Slider() {
@@ -119,7 +132,9 @@ function Slider() {
                     <TextCont>
                         <Tittle>{item.title}</Tittle>
                         <Desc>{item.desc}</Desc>
-                        <Btn>{item.btn}</Btn>
+                        <Btn>
+                            <Link to='/prodpage'>{item.btn}</Link>
+                        </Btn>
                     </TextCont>
                 </Slide>
                     ))

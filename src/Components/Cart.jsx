@@ -1,267 +1,261 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Footer from './Footer'
+import Nav from './Nav'
 
 const Container = styled.div`
-    width: 100vw;
-    height: auto;
-    border: 6px solid #000;
+    width: 100%;
+    height: 150vh;
     padding: 2%;
-
 `
-const TopperMost = styled.h2`
+const TopperMost = styled.h1`
     display: flex;
     justify-content: center;
-    padding: 2%;
+    margin-bottom: 2%;
+    font-size: 2vw;
 `
 const Top = styled.div`
     width: 100%;
-    height: auto;
+    margin-bottom: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2%;
 `
 const Button = styled.button`
-    padding: 1% 3%;
-    background: ${props => props.bg};
-    color: ${props => props.col};
-    border: none;
-    border: 1px solid #000;
-    cursor: pointer;
-    font-size: 1.2vw;
+    padding: 1% 4%;
+    background-color: ${props => props.bg};
+    color: ${props => props.color};
+    font-size: 1vw;
 `
-
 const Mid = styled.div`
-    display: flex;
-    gap: 5%;
     width: 30%;
+    display: flex;
+    gap: 10%;
     text-decoration: underline;
-    cursor: pointer;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
 `
 const Bottom = styled.div`
     width: 100%;
-    height: auto;
+    height: 70vh;
     display: flex;
     align-items: center;
 `
-const ContLeft = styled.div`
-    height: 100%;
+const Bleft = styled.div`
     flex: 3;
+    height: 100%;
 `
-const HR = styled.hr`
-
+const Bcont = styled.div`
+    width: 100%;
+    height: 50%;
+    display: flex;
 `
 const Left = styled.div`
-    display: flex;
-`
-const One = styled.div`
-    height: 100%;
     flex: 3;
+    height: 100%;
     display: flex;
 `
-const Two = styled.div`
-    height: 100%;
-    width: 40%;
-`
-const Right = styled.div`
-height: 100%;
-flex: 1;
-border: 1px solid grey;
-border-radius: 12px;
-`
-const Image = styled.div`
-    margin-top: 5%;
-    margin-bottom: 5%;
-    height: 100%;
+const Mage = styled.div`
     width: 50%;
-    border: 1px solid #000;
+    height: 100%;
     img{
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
     }
 `
-const Color = styled.div`
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    margin-left: 4%;
-    background: ${props=>props.bgc};
-`
+
 const Desc = styled.div`
+    width: 50%;
     height: 100%;
-    width: 40%;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
-    P{
-        padding: 8% 4%;
-    }
+    gap: 8%;
+    padding: 2%;
 `
-const TwoTop = styled.div`
-    width: 100%;
-    height: 50%;
+
+const Prod = styled.p``
+
+const Id = styled.p``
+
+const Circ = styled.div`
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: ${props => props.bgc};
+`
+
+const Sixe = styled.p``
+
+const Right = styled.div`
+    flex: 1;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 5%;
 `
-const Minus = styled.div`
-    font-size: 2vw;
+
+const Bright = styled.div`
+    flex: 1;
+    height: 80%;
+    border-radius: 10px;
+    border: 1px solid black;
     padding: 2%;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5%;
 `
+const BrightTop = styled.div``
 const Buttonn = styled.button`
     padding: 2%;
-    font-size: 1.5vw;
-`
-const Plus = styled.div`
+    margin: 2%;
     font-size: 2vw;
-    padding: 2%;
-    cursor: pointer;
 `
-const TwoBottom = styled.div`
+
+const BrightBot = styled.div`
+    font-size: 2vw;
+`
+const Order = styled.h2`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 50%;
-    font-size: 3vw;
-`
-const Order = styled.h3`
-    display: flex;
-    justify-content: center;
-    padding:8% 2%;
-    font-size: 2vw;
-`
-const SubTotal = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding:8% 2%;
-    font-size: 1.2vw;
 `
 
-const Estimated = styled.div`
+const Sub = styled.div`
     display: flex;
     justify-content: space-between;
-    padding:8% 2%;
-    font-size: 1.2vw;
+    align-items: center;
 `
 
-const Shipping = styled.div`
+const Est = styled.div`
     display: flex;
     justify-content: space-between;
-    padding:8% 2%;
-    font-size: 1.2vw;
+    align-items: center;
+`
+
+const Ship = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `
 
 const Total = styled.div`
     display: flex;
     justify-content: space-between;
-    padding:8% 2%;
-    font-size: 1.2vw;
+    align-items: center;
+`
+
+const Check = styled.button`
+    padding: 3% 4%;
+    background: #000;
+    color: white;
+    border: none;
+`
+const Hr = styled.hr`
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: white;
 `
 
 function Cart() {
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(0)
     const [price, setPrice] = useState(30)
 
-    const increment = () => {
-        setCount(count + 1)
-        setPrice(count * price)
-    }
-    const decrement = () => {
-        
-        if(count === 0){
-            alert(`can't take a value lower than 0`)
-            return
-        }else{
-            setCount(count-1)
-        }
-    }
+    const [count2, setCount2] = useState(0)
+    const [price2, setPrice2] = useState(30)
+
   return (
-    <Container>
-        <TopperMost>Your Shopping Cart</TopperMost>
+      <>
+      <Nav/>
+        <Container>
+        <TopperMost>YOUR CART</TopperMost>
         <Top>
-            <Button bg='transparent'>CONTINUE SHOPPING</Button>
+            <Button bg='white' color='black'>CONTINUE SHOPPING</Button>
             <Mid>
-                <p>Your Shopping Cart (2)</p>
-                <p>Your Wishlist(0)</p>
+                <p>Shopping Bag(2)</p>
+                <p>Your Wishlist (0)</p>
             </Mid>
-            <Button bg='black' col = 'white'>CHECKOUT NOW</Button>
+            <Button bg='black' color='white'>CHECKOUT NOW</Button>
         </Top>
         <Bottom>
-            <ContLeft>
-            <Left>
-                <One>
-                    <Image>
-                        <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/c0d5ce7e947840c5a6c0a80900048429_9366/AQ1701_01_standard.jpg" alt="" />
-                    </Image>
-                    <Desc>
-                        <p><b>Product:</b> Adidas Running Bag</p>
-                        <p><b>ID:</b>46577444AE</p>
-                        <Color bgc='black'></Color>
-                        <p><b>Size:</b>XL</p>
-                    </Desc>
-                </One>
-                <Two>                       
-                    <TwoTop>
-                        <Minus onClick={decrement}>-</Minus>
+            <Bleft>
+                <Bcont>
+                    <Left>
+                        <Mage>
+                            <img src="https://nb.scene7.com/is/image/NB/m840lb5_nb_02_i?$pdpflexf2$&wid=880&hei=880" alt="" />
+                        </Mage>
+                        <Desc>
+                            <Prod><b>Product:</b> New balnce T90</Prod>
+                            <Id><b>Id:</b>T903245627MEI</Id>
+                            <Circ bgc='skyblue'></Circ>
+                            <Sixe><b>Size:</b> 42.5</Sixe>
+                        </Desc>
+                    </Left>
+                    <Right> 
+                        <BrightTop>
+                        <Buttonn onClick={()=>{setCount(count < 1 ? alert(`can't have a value lower than 0`): Number(count) - 1)}}>-</Buttonn>
                         <Buttonn>{count}</Buttonn>
-                        <Plus onClick={increment}>+</Plus>
-                    </TwoTop>
-                    <TwoBottom>${price}</TwoBottom>
-                </Two>
-            </Left>
-                <HR/>
-            <Left>
-                <One>
-                    <Image>
-                        <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/c0d5ce7e947840c5a6c0a80900048429_9366/AQ1701_01_standard.jpg" alt="" />
-                    </Image>
-                    <Desc>
-                        <p><b>Product:</b> Adidas Running Bag</p>
-                        <p><b>ID:</b>46577444AE</p>
-                        <Color bgc='black'></Color>
-                        <p><b>Size:</b>XL</p>
-                    </Desc>
-                </One>
-                <Two>                       
-                    <TwoTop>
-                        <Minus onClick={decrement}>-</Minus>
-                        <Buttonn>{count}</Buttonn>
-                        <Plus onClick={increment}>+</Plus>
-                    </TwoTop>
-                    <TwoBottom>$30</TwoBottom>
-                </Two>
-            </Left>
-            </ContLeft>
+                        <Buttonn  onClick={()=>{setCount(count + 1)}}>+</Buttonn>
+                        </BrightTop>
 
-            
-            <Right>
-                <Order>ORDER SUMMARY</Order>
-                <SubTotal>
-                    <p>Subtotal:</p>
+                        <BrightBot>
+                            <p>${price * count}</p>
+                        </BrightBot>
+                    </Right>
+                </Bcont>
+                <Hr/>
+                <Bcont>
+                    <Left>
+                        <Mage>
+                            <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/9b9d273018614ede9fe7ada1011c7e19_9366/HD2220_01_standard.jpg" alt="" />
+                        </Mage>
+
+                        <Desc>
+                            <Prod><b>Product:</b> New balnce T90</Prod>
+                            <Id><b>Id:</b>T903245627MEI</Id>
+                            <Circ bgc='red'></Circ>
+                            <Sixe><b>Size:</b> 42.5</Sixe>
+                        </Desc>
+                    </Left>
+                    <Right>
+                        <BrightTop>
+                            <Buttonn onClick={()=>{setCount2(count2 < 1 ? alert(`can't have a value lower than 0`): Number(count2) - 1)}}>-</Buttonn>
+                            <Buttonn>{count2}</Buttonn>
+                            <Buttonn onClick={()=>{setCount2(count2 + 1)}}>+</Buttonn>
+                        </BrightTop>
+
+                        <BrightBot>
+                            <p>${price2 * count2}</p>
+                        </BrightBot>
+                    </Right>
+                </Bcont>
+            </Bleft>
+            <Bright>  
+                <Order>ORDER SUMMARY</Order>    
+                <Sub>
+                    <p>Subtotal</p>
                     <p>$80</p>
-                </SubTotal>
-                <Estimated>
-                    <p>Estimated Shipping:</p>
-                    <p>$5.90</p>
-                </Estimated>
-                <Shipping>
-                    <p>Shipping discount:</p>
-                    <p>$-5.90</p>
-                </Shipping>
+                </Sub>     
+                <Est>
+                    <p>Estimated Shipping</p>
+                    <p>$80</p>
+                </Est> 
+                <Ship>
+                    <p>Shiping Discount</p>
+                    <p>$80</p>
+                </Ship>
                 <Total>
-                    <p><b>Total</b>:</p>
+                    <p><b>Total</b></p>
                     <p><b>$80</b></p>
                 </Total>
-            </Right>
+                <Check>CHECKOUT NOW</Check>
+            </Bright>
         </Bottom>
-        
-    </Container>
+        </Container>
+        <Footer/>
+    </>
   )
 }
 

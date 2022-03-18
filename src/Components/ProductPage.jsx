@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { useTransition, animated } from 'react-spring'
+import Footer from './Footer'
 import Nav from './Nav'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
 const Container = styled.div`
     width: 100%;
     height: 100vh;
@@ -100,15 +105,47 @@ const AddRight = styled.button`
         background-color: #f8f4f4;
     }
 `
+const Animated = styled.div`
+    width: 100%;
+    height: 8vh;
+    background-color: rgb(33, 212, 138);
+    position: fixed;
+    left: 0;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    .ico{
+        position: absolute;
+        left: 98%;
+        font-size: 1.2vw;
+        cursor: pointer;
+    }
+`
 
 function ProductPage() {
+    const [count, setCount] = useState(0)
+    const [alert, setAlert] = useState(false)
+
+
+
+    const masked = useTransition(alert, {
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        reverse: alert,
+        delay: 200,
+        // config: config.molasses,
+        // onRest: () => set(!show),
+      })
   return (
       <>
          <Nav/>
             <Container>
             <Left></Left>
             <Right>
-                <Text>Denim Jeans</Text>
+                <Text>Adidas NMD Runners</Text>
                 <Passage>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quaerat cupiditate ipsum sint sunt aspernatur impedit placeat rerum adipisci iusto recusandae aliquam fugit consectetur accusantium assumenda sit obcaecati, odit nisi quisquam eaque necessitatibus, sed sequi delectus enim? Obcaecati, iure mollitia.</Passage>
                 <Number>$50</Number>
                 <Color>
@@ -134,19 +171,32 @@ function ProductPage() {
 
                 <Add>
                     <AddLeft>
-                        <Minus>-</Minus>
-                        <Button>1</Button>
-                        <Plus>+</Plus>
+                        <Minus onClick={()=>{setCount(count < 1 ? alert(`can't have a value lower than 0`): count - 1)}}>-</Minus>
+                        <Button>{count}</Button>
+                        <Plus onClick={()=>{setCount(count + 1)}}>+</Plus>
                     </AddLeft>
 
-                    <AddRight>
+                    <AddRight onClick={()=>{setAlert(true)}}>
                         ADD TO CART
                     </AddRight>
                     
                 </Add>
             </Right>
+            {
+            masked(
+            (styles, item) => item && <animated.div style={styles} className='firstAnimate'>
+              <Animated>
+                <b>Adidas NMD Runners</b>  has been successfully added to your cart!! <FontAwesomeIcon className='ico' icon={faTimes} onClick={()=> setAlert(false)}></FontAwesomeIcon>
+              </Animated>
+            </animated.div>
+            )
+            }
             
         </Container>
+        <Footer/>
+
+
+
       </>
   )
 }
