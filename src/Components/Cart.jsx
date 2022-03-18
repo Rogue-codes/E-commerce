@@ -223,10 +223,8 @@ const Hr = styled.hr`
 
 function Cart() {
     const [count, setCount] = useState(0)
-    // const [price, setPrice] = useState(30)
 
     const [count2, setCount2] = useState(0)
-    // const [price2, setPrice2] = useState(30)
 
   return (
       <>
