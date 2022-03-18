@@ -5,10 +5,14 @@ import Nav from './Nav'
 
 const Container = styled.div`
     width: 100%;
-    height: 120vh;
+    height: auto;
     padding: 2%;
 `
 const TopperMost = styled.h1`
+    @media (max-width:450px) {
+        font-size: 2rem;
+        margin-bottom: 4%;
+    }
     display: flex;
     justify-content: center;
     margin-bottom: 2%;
@@ -22,12 +26,23 @@ const Top = styled.div`
     align-items: center;
 `
 const Button = styled.button`
+    @media (max-width:450px) {
+        font-size: .6rem;
+        padding: 1% 4%;
+    }
     padding: 1% 4%;
     background-color: ${props => props.bg};
     color: ${props => props.color};
     font-size: 1vw;
 `
 const Mid = styled.div`
+    @media (max-width:450px) {
+        font-size: .8rem;
+        width: 40%;
+        flex-direction: column;
+        align-items: center;
+        gap: 5%;
+    }
     width: 30%;
     display: flex;
     gap: 10%;
@@ -35,6 +50,12 @@ const Mid = styled.div`
     font-size: 1.5vw;
 `
 const Bottom = styled.div`
+    @media (max-width:450px) {
+        margin-top: 10%;
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 10%;
+    }
     width: 100%;
     height: 70vh;
     display: flex;
@@ -45,11 +66,19 @@ const Bleft = styled.div`
     height: 100%;
 `
 const Bcont = styled.div`
+    @media (max-width:450px) {
+        align-items: center;
+        height: auto;
+    }
     width: 100%;
     height: 50%;
     display: flex;
 `
 const Left = styled.div`
+    @media (max-width:450px) {
+        height: 80%;
+        align-items: center;
+    }
     flex: 3;
     height: 100%;
     display: flex;
@@ -65,6 +94,9 @@ const Mage = styled.div`
 `
 
 const Desc = styled.div`
+    @media (max-width:450px) {
+        justify-content: center;
+    }
     width: 50%;
     height: 100%;
     display: flex;
@@ -74,11 +106,23 @@ const Desc = styled.div`
     padding: 2%;
 `
 
-const Prod = styled.p``
+const Prod = styled.p`
+    @media (max-width:450px) {
+        font-size: .8rem;
+    }
+`
 
-const Id = styled.p``
+const Id = styled.p`
+    @media (max-width:450px) {
+        font-size: .8rem;
+    }
+`
 
 const Circ = styled.div`
+    @media (max-width:450px) {
+        width: 10px;
+        height: 10px;
+    }
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -97,24 +141,39 @@ const Right = styled.div`
 `
 
 const Bright = styled.div`
+    @media (max-width:450px) {
+        width: 100%;
+        gap: 20%;
+        margin-top: 10%;
+    } 
     flex: 1;
     height: 80%;
     border-radius: 10px;
-    border: 1px solid black;
+    border: .2px solid grey;
     padding: 2%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 5%;
 `
-const BrightTop = styled.div``
+const BrightTop = styled.div`
+    @media (max-width:450px) {
+        font-size: 1rem;
+    }
+`
 const Buttonn = styled.button`
+    @media (max-width:450px) {
+        font-size: 1rem;
+    }
     padding: 2%;
     margin: 2%;
     font-size: 2vw;
 `
 
 const BrightBot = styled.div`
+    @media (max-width:450px) {
+        font-size: 1rem;
+    }
     font-size: 2vw;
 `
 const Order = styled.h2`
@@ -148,6 +207,9 @@ const Total = styled.div`
 `
 
 const Check = styled.button`
+    /* @media (max-width:450px) {
+        font-size: .8rem;
+    } */
     padding: 3% 4%;
     background: #000;
     color: white;
