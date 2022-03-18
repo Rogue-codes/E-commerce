@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ProductItems} from './Data'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     @media (max-width:450px) {
@@ -52,16 +53,17 @@ const Textt = styled.h1`
 
 const Passage = styled.p`
     @media (max-width:450px) {
-        font-size: 1rem;
+        font-size: .9rem;
     }
     color:#333;
     position: absolute;
     top: 40%;
     padding: 2%;
+    width: 90%;
     background-color:  rgba(240, 248, 255, 0.726);
 `
 
-const Btn = styled.button`
+const Btn = styled.a`
     @media (max-width:450px) {
         top: 70%;
         font-size: 1rem;
@@ -69,6 +71,8 @@ const Btn = styled.button`
     color: black;
     position: absolute;
     top: 60%;
+    left: 35%;
+    border: 2px solid #000;
     padding: 2% 4%;
     font-size: 1.2vw;
     transition: all .5s ease-in-out;
@@ -88,7 +92,7 @@ const Products = () => {
                     <img src={item.image} alt="" />
                     <Textt>{item.title}</Textt>
                     <Passage>{item.desc}</Passage>
-                    <Btn>{item.btn}</Btn>
+                    <Link to='/prodpage'><Btn>{item.btn}</Btn></Link>
                 </ContCard>
             ))
         }

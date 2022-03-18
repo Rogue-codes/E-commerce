@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {CategoryItem} from './Data'
-
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     @media (max-width:450px) {
@@ -59,7 +59,7 @@ const Text = styled.h1`
     position: absolute;
 `
 
-const Button = styled.button`
+const Button = styled.a`
     @media (max-width:450px) {
         font-size: 1rem;
     }
@@ -67,6 +67,7 @@ const Button = styled.button`
     border: 2px solid #000;
     position: absolute;
     top: 60%;
+    left: 35%;
     padding: 2% 4%;
     font-size: 1.2vw;
     transition: all .5s ease-in-out;
@@ -84,7 +85,7 @@ function Categories() {
             <CateCards>
                 <Text>{item.title}</Text>
                 <img src={item.image} alt="" />
-                <Button>{item.btn}</Button>
+                <Link to='prodpage'><Button>{item.btn}</Button></Link>
             </CateCards>
             
             )) 

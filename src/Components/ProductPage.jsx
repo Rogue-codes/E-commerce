@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useTransition, animated } from 'react-spring'
-import Footer from './Footer'
 import Nav from './Nav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -86,9 +85,11 @@ const AddLeft = styled.div`
 `
 const Minus = styled.div`
     font-size: 2vw;
+    cursor: pointer;
 `
 const Plus = styled.div`
     font-size: 2vw;
+    cursor: pointer;
 `
 const Button = styled.button`
     padding: 4% 6%;
@@ -193,7 +194,6 @@ function ProductPage() {
             }
             
         </Container>
-        <Footer/>
 
 
 

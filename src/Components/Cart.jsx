@@ -5,7 +5,7 @@ import Nav from './Nav'
 
 const Container = styled.div`
     width: 100%;
-    height: 150vh;
+    height: 120vh;
     padding: 2%;
 `
 const TopperMost = styled.h1`

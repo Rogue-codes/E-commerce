@@ -21,8 +21,8 @@ align-items: center;
 gap: 5%;
 select{
     @media (max-width:450px) {
-        font-size: .5rem;
-        width: 50%;
+        font-size: .6rem;
+        width: 70%;
     }
     height: 6vh;
     width: 30%;
@@ -30,7 +30,7 @@ select{
     &:nth-child(3){
         @media (max-width:450px) {
             font-size: .5rem;
-            width: 50%;
+            width: 70%;
         }
         width: 15%;
     }
@@ -40,7 +40,7 @@ select{
 }
 p{
     @media (max-width:450px) {
-        font-size: .6rem;
+        font-size: .8rem;
     }
 }
 `
@@ -56,7 +56,7 @@ const Sort = styled.div`
     gap: 5%;
     select{
         @media (max-width:450px) {
-        font-size: .6rem;
+        font-size: .8rem;
     }
     height: 6vh;
     width: 30%;
@@ -64,7 +64,7 @@ const Sort = styled.div`
 }
 p{
     @media (max-width:450px) {
-        font-size: .6rem;
+        font-size: .8rem;
     }
 }
 `

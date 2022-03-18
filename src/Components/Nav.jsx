@@ -20,11 +20,11 @@ const Components = styled.div`
 `
 
 const Left = styled.div`
-width:30%;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:5%;
+    width:30%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5%;
 `
 
 const Center = styled.div`
@@ -179,7 +179,7 @@ function Nav() {
 
             <div className="cart">
             <FontAwesomeIcon className='ico'  icon={faShoppingCart}></FontAwesomeIcon>
-            <Link to='/cart'>Cart</Link>
+            <Link to='/cart'>Cart </Link>
             </div>
         </Right>
     </Components>

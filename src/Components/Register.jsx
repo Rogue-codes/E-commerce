@@ -16,6 +16,9 @@ const Container = styled.div`
     background-repeat: no-repeat;
 `
 const Wrapper = styled.div`
+    @media (max-width:450px) {
+        width: 80%;
+    }
     width: 50%;
     height: auto;
     padding: 2%;
@@ -23,6 +26,11 @@ const Wrapper = styled.div`
     border: 1px solid #000;
 `
 const Texts = styled.h1`
+    @media (max-width:450px) {
+        font-size:.8rem;
+        margin-left: 4%;
+        margin-bottom: 2%;
+    }
     font-size: 2vw;
     padding-bottom: 2%;
 `
@@ -34,16 +42,30 @@ const Form = styled.form`
     gap: 5%;
 `
 const Input = styled.input`
+    @media (max-width:450px) {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 5%;
+        font-size:.7rem;
+    }
     width: 40%;
     height: 8vh;
     margin-bottom: 3%;
     padding-left: 2%;
 `
 const Aggreement = styled.p`
+    @media (max-width:450px) {
+        font-size:.8rem;
+        margin-left: 4%;
+    }
     font-size: 1.3vw;
     margin: 2% 0;
 `
 const Button = styled.button`
+    @media (max-width:450px) {
+        font-size:.8rem;
+        margin-left: 4%;
+    }
     padding: 2% 5%;
     font-size: 1vw;
     border: none;
@@ -70,7 +92,7 @@ function Register() {
                 <Aggreement>By creating an account i consent to the proccessing of my prersonal data in accordance with the <b>privacy policy</b></Aggreement>
                 <Button>CREATE</Button>
             </Wrapper>
-        </Container> */}
+        </Container> 
     </>
   )
 }

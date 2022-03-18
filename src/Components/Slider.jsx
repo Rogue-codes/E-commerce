@@ -6,6 +6,9 @@ import {slideItems} from './Data'
 import { Link } from 'react-router-dom'
 
 const Container = styled.div`
+    @media (max-width:450px) {
+        height: 50vh;
+    }
     width: 100%;
     height: 100vh;
     display: flex;
