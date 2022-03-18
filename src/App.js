@@ -17,11 +17,11 @@ function App() {
     <Router>
       <Nav/>
       <Routes>
-        {/* <Route path="/" element={ <Home/>}/>
+        <Route path="/" element={ <Home/>}/>
         <Route path="/login" element={ <Login/>}/>
         <Route path="/register" element={ <Register/>}/>
         <Route path="/prodpage" element={ <ProductPage/>}/>
-        <Route path="/cart" element={<Cart/>}/> */}
+        <Route path="/cart" element={<Cart/>}/>
       </Routes>
     </Router>
       
