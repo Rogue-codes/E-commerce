@@ -17,7 +17,7 @@ const Container = styled.div`
 `
 const Wrapper = styled.div`
     @media (max-width:450px) {
-        width: 80%;
+        width: 90%;
     }
     width: 50%;
     height: auto;
@@ -28,7 +28,6 @@ const Wrapper = styled.div`
 const Texts = styled.h1`
     @media (max-width:450px) {
         font-size:.8rem;
-        margin-left: 4%;
         margin-bottom: 2%;
     }
     font-size: 2vw;
@@ -43,7 +42,7 @@ const Form = styled.form`
 `
 const Input = styled.input`
     @media (max-width:450px) {
-        width: 90%;
+        width: 100%;
         margin: auto;
         margin-bottom: 5%;
         font-size:.7rem;
@@ -56,7 +55,6 @@ const Input = styled.input`
 const Aggreement = styled.p`
     @media (max-width:450px) {
         font-size:.8rem;
-        margin-left: 4%;
     }
     font-size: 1.3vw;
     margin: 2% 0;
@@ -64,7 +62,7 @@ const Aggreement = styled.p`
 const Button = styled.button`
     @media (max-width:450px) {
         font-size:.8rem;
-        margin-left: 4%;
+        margin: 2% 0%;
     }
     padding: 2% 5%;
     font-size: 1vw;

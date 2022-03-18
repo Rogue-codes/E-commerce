@@ -15,14 +15,23 @@ const Container = styled.div`
     -o-background-size:cover;
     background-repeat: no-repeat;
     background-position: 10% 50%;
+    @media (max-width:450px) {
+    background-position: 50% 50%;
+    }
 `
 const Wrapper = styled.div`
+    @media (max-width:450px) {
+        width: 90%;
+    }
     width: 25%;
     height: auto;
     padding: 2%;
     background-color: rgba(255, 255, 255, 0.678);
 `
 const Texts = styled.h1`
+    @media (max-width:450px) {
+        font-size: 1rem;
+    }
     font-size: 1.6vw;
     padding-bottom: 4%;
 `
@@ -41,6 +50,9 @@ const Input = styled.input`
 `
 
 const Button = styled.button`
+    @media (max-width:450px) {
+        font-size: 1rem;
+    }
     padding: 4% 8%;
     font-size: 1.4vw;
     border: none;
