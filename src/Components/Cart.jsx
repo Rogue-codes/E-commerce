@@ -161,10 +161,10 @@ const Hr = styled.hr`
 
 function Cart() {
     const [count, setCount] = useState(0)
-    const [price, setPrice] = useState(30)
+    // const [price, setPrice] = useState(30)
 
     const [count2, setCount2] = useState(0)
-    const [price2, setPrice2] = useState(30)
+    // const [price2, setPrice2] = useState(30)
 
   return (
       <>
@@ -201,7 +201,7 @@ function Cart() {
                         </BrightTop>
 
                         <BrightBot>
-                            <p>${price * count}</p>
+                            <p>$40</p>
                         </BrightBot>
                     </Right>
                 </Bcont>
@@ -227,7 +227,7 @@ function Cart() {
                         </BrightTop>
 
                         <BrightBot>
-                            <p>${price2 * count2}</p>
+                            <p>$60</p>
                         </BrightBot>
                     </Right>
                 </Bcont>
