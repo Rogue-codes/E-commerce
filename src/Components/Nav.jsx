@@ -41,7 +41,7 @@ const Components = styled.div`
     }
     display: none;
     width: 80%;
-    box-shadow: 2px 2px 4px #010214a6;
+    box-shadow: 2px 2px 4px white;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -70,6 +70,12 @@ const Components = styled.div`
       text-decoration: none;
     }
   }
+    .icon{
+        display: none;
+        @media (max-width:450px) {
+            display: block;
+        }
+    }
 `
 
 const Left = styled.div`
