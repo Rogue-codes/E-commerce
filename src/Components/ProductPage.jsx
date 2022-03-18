@@ -8,7 +8,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 const Container = styled.div`
     @media (max-width:450px) {
         flex-direction: column;
-        height: 150vh;
+        height: 120vh;
     }
     width: 100%;
     height: 100vh;
