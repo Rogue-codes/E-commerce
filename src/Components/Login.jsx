@@ -16,7 +16,8 @@ const Container = styled.div`
     background-repeat: no-repeat;
     background-position: 10% 50%;
     @media (max-width:450px) {
-    background-position: 50% 50%;
+        background-position: 50% 50%;
+    height: 80vh;
     }
 `
 const Wrapper = styled.div`
