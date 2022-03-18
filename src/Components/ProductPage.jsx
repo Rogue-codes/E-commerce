@@ -6,12 +6,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const Container = styled.div`
+    @media (max-width:450px) {
+        flex-direction: column;
+        height: 150vh;
+    }
     width: 100%;
     height: 100vh;
     display: flex;
     padding: 4%;
 `
 const Left = styled.div`
+    @media (max-width:450px) {
+        width: 100%;
+        height: 50%;
+    }
     width: 50%;
     height: 100%;
     background: url('https://assets.adidas.com/images/w_1880,f_auto,q_auto/7df69015a9024149b7f5ad490115139c_9366/GV7701_01_standard.jpg');
@@ -23,19 +31,31 @@ const Left = styled.div`
     background-position: 70% 10%;
 `
 const Right = styled.div`
+    @media (max-width:450px) {
+        width: 100%;
+    }
     width: 50%;
     height: 100%;
     background-position: 10% 30%;
 `
 const Text = styled.h2`
+    @media (max-width:450px) {
+        font-size: 1rem;
+    }
     font-size: 3vw;
     padding: 4%;
 `
 const Passage = styled.p`
+    @media (max-width:450px) {
+        font-size: .8rem;
+    }
     font-size: 1.3vw;
     padding: 4%;
 `
 const Number = styled.h2`
+    @media (max-width:450px) {
+        font-size: 1rem;
+    }
     padding-left: 4%;
 `
 const Color = styled.div`
@@ -52,6 +72,10 @@ const Coloribs = styled.div`
     width: 50%;
 `
 const Circle = styled.div`
+    @media (max-width:450px) {
+        width: 10px;
+        height: 10px;
+    }
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -84,10 +108,16 @@ const AddLeft = styled.div`
     gap: 5%;
 `
 const Minus = styled.div`
+    @media (max-width:450px) {
+        font-size: 1.2rem;
+    }
     font-size: 2vw;
     cursor: pointer;
 `
 const Plus = styled.div`
+    @media (max-width:450px) {
+        font-size: 1.2rem;
+    }
     font-size: 2vw;
     cursor: pointer;
 `
@@ -107,6 +137,9 @@ const AddRight = styled.button`
     }
 `
 const Animated = styled.div`
+    @media (max-width:450px) {
+        font-size: .6rem;
+    }
     width: 100%;
     height: 8vh;
     background-color: rgb(33, 212, 138);
@@ -116,10 +149,13 @@ const Animated = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1%;
+    gap: .2%;
     .ico{
+        @media (max-width:450px) {
+            font-size: 1.2rem;
+        }
         position: absolute;
-        left: 98%;
+        left: 95%;
         font-size: 1.2vw;
         cursor: pointer;
     }
