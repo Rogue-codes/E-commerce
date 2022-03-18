@@ -70,11 +70,14 @@ const Coloribs = styled.div`
     gap: 2%;
     padding: 4%;
     width: 50%;
+    p{
+        font-size: 1.3rem;
+    }
 `
 const Circle = styled.div`
     @media (max-width:450px) {
-        width: 10px;
-        height: 10px;
+        width: 20px;
+        height: 20px;
     }
     width: 30px;
     height: 30px;
@@ -138,7 +141,7 @@ const AddRight = styled.button`
 `
 const Animated = styled.div`
     @media (max-width:450px) {
-        font-size: .6rem;
+        font-size: .7rem;
     }
     width: 100%;
     height: 8vh;
